@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-let num = 54;
 
 @Component({
   selector: 'app-root',
