@@ -5,11 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  email = "abc@outlook.com";
+  pass = "12439";
+  submitted = false;
+  onSubmit() { this.submitted = true; }
 }
