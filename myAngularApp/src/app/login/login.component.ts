@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     }
     checkPassword(event: Event){
       this.pass = (<HTMLInputElement>event.target).value.toString();
-      console.log(this.pass);
     if(this.pass == "12439"){
       this.PassCheck = "Password is correct";
       this.submitted = true; 
@@ -39,7 +38,6 @@ export class LoginComponent implements OnInit {
     }
     checkEmail(event: Event){
       this.email = (<HTMLInputElement>event.target).value.toString();
-      console.log(this.email);
     if(this.email == "123@outlook.com"){
       this.EmailCheck = "Email is correct";
       this.submitted = true; 
