@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { EmailValidator } from '@angular/forms';
+import { AuthService } from '../../auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-    constructor(private router:Router) { 
+    constructor(private router:Router, private service: AuthService) { 
     }
     ngOnInit() {
     }
@@ -16,7 +18,8 @@ export class LoginComponent implements OnInit {
     PassCheck = "Enter registered Password";
     email: string;
     EmailCheck = "Enter registered Email";
-    onSubmit() { 
+    onSubmit(email: string, pass: string) { 
+      this.submitted = this.service.validate(email,pass);
       if(this.submitted == true){
         this.router.navigate(['/about']);
       }
@@ -24,6 +27,7 @@ export class LoginComponent implements OnInit {
         alert("Please fill in the form with valid credentials.");
         this.router.navigate(['/login']);
       }
+
     }
     checkPassword(event: Event){
       this.pass = (<HTMLInputElement>event.target).value.toString();
