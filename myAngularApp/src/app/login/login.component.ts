@@ -29,26 +29,30 @@ export class LoginComponent implements OnInit {
       }
 
     }
-    checkPassword(event: Event){
+    checkPassword(event: Event,p: any){
       this.pass = (<HTMLInputElement>event.target).value.toString();
     if(this.pass == "12439"){
       this.PassCheck = "Password is correct";
-      this.submitted = true; 
+      (<HTMLInputElement>event.target).className = "valid";
+      p.className = "valid";
     }
     else{
       this.PassCheck = "Password is Incorrect";
-      this.submitted = false;
+      (<HTMLInputElement>event.target).className = "invalid";
+      p.className = "invalid";
       }
     }
-    checkEmail(event: Event){
+    checkEmail(event: Event, p : any){
       this.email = (<HTMLInputElement>event.target).value.toString();
     if(this.email == "123@outlook.com"){
       this.EmailCheck = "Email is correct";
-      this.submitted = true; 
+      (<HTMLInputElement>event.target).className = "valid";
+      p.className = "valid";
     }
     else{
       this.EmailCheck = "Email is Incorrect";
-      this.submitted = false;
+      (<HTMLInputElement>event.target).className = "invalid";
+      p.className = "invalid";      
       }
     }
   }
