@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from '../auth.guard';
@@ -11,12 +11,12 @@ import { AuthGuard } from '../auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
+    DashboardComponent,
     LoginComponent,
     HomeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,    
     AppRoutingModule
   ],
   providers: [AuthGuard],

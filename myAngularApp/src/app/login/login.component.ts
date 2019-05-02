@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { EmailValidator } from '@angular/forms';
 import { AuthService } from '../../auth.service';
 @Component({
   selector: 'app-login',
@@ -21,7 +20,7 @@ export class LoginComponent implements OnInit {
     onSubmit(email: string, pass: string) { 
       this.submitted = this.service.validate(email,pass);
       if(this.submitted == true){
-        this.router.navigate(['/about']);
+        this.router.navigate(['/dashboard']);
       }
       else{
         alert("Please fill in the form with valid credentials.");
