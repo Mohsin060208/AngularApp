@@ -1,10 +1,9 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Output } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 
 export class RecipeService{
-    recipeSelected = new EventEmitter<Recipe>();
-
+ @Output()  recipeSelected = new EventEmitter<Recipe>();
 private recipes : Recipe[] = [
       new Recipe('Hyderabadi Chicken Biryani', 'A chef will tell you how to make that.','https://image.shutterstock.com/z/stock-photo-hot-spicy-chicken-biryani-a-most-famous-food-of-pakistani-indian-peoples-195628526.jpg',
       [
@@ -21,5 +20,11 @@ private recipes : Recipe[] = [
     ];
     getRecipes(){
         return this.recipes.slice();
+    }
+    getRecipe(index: number){
+      return this.recipes[index];
+    }
+
+    addIngredientsToShoppingList(ingredients: Ingredient[]){
     }
 }
