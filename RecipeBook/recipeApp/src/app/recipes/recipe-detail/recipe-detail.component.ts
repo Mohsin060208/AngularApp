@@ -26,5 +26,7 @@ id: number;
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
     this.router.navigate(['shopping']);
   }
-
+onEditRecipe(){
+  this.router.navigate(['edit'], {relativeTo: this.route});
+  }
 }

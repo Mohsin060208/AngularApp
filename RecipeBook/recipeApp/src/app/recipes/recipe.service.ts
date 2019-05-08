@@ -1,10 +1,10 @@
-import { EventEmitter, Output, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 @Injectable()
 export class RecipeService{
-  @Output()  recipeSelected = new EventEmitter<Recipe>();
+ 
   private recipes : Recipe[] = [
     new Recipe('Hyderabadi Chicken Biryani', 'A chef will tell you how to make that.','https://www.bing.com/th?id=OIP.F5GMEHaMrw3xWAuuBDxz2AHaE8&pid=Api&rs=1&p=0',
     [
