@@ -1,23 +1,25 @@
-import { EventEmitter, Output } from '@angular/core';
+import { EventEmitter, Output, Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
-
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
+@Injectable()
 export class RecipeService{
- @Output()  recipeSelected = new EventEmitter<Recipe>();
-private recipes : Recipe[] = [
-      new Recipe('Hyderabadi Chicken Biryani', 'A chef will tell you how to make that.','https://image.shutterstock.com/z/stock-photo-hot-spicy-chicken-biryani-a-most-famous-food-of-pakistani-indian-peoples-195628526.jpg',
-      [
-          new Ingredient('Chicken',2),
-          new Ingredient('Rice',3),
-          new Ingredient('Tomato',5)
-      ]),
-      new Recipe('Bombay Chicken Biryani', 'A chef will tell you how to make that.','https://image.shutterstock.com/z/stock-photo-hot-spicy-chicken-biryani-a-most-famous-food-of-pakistani-indian-peoples-195628526.jpg',
-      [
-        new Ingredient('Chicken',2),
-        new Ingredient('Rice',3),
-        new Ingredient('Onion',5)
-      ]),  
-    ];
+  @Output()  recipeSelected = new EventEmitter<Recipe>();
+  private recipes : Recipe[] = [
+    new Recipe('Hyderabadi Chicken Biryani', 'A chef will tell you how to make that.','https://www.bing.com/th?id=OIP.F5GMEHaMrw3xWAuuBDxz2AHaE8&pid=Api&rs=1&p=0',
+    [
+      new Ingredient('Chicken',2),
+      new Ingredient('Rice',3),
+      new Ingredient('Onion',5)
+    ]),
+    new Recipe('Bombay Chicken Biryani', 'A chef will tell you how to make that.','https://www.bing.com/th?id=OIP.tHFHweB53mlurF09UnBiSAHaFJ&pid=Api&rs=1&p=0',
+    [
+      new Ingredient('Chicken',2),
+      new Ingredient('Rice',3),
+      new Ingredient('Tomato',5)
+    ]),  
+  ];
+  constructor(private sl: ShoppingListService){}
     getRecipes(){
         return this.recipes.slice();
     }
@@ -26,5 +28,6 @@ private recipes : Recipe[] = [
     }
 
     addIngredientsToShoppingList(ingredients: Ingredient[]){
+      this.sl.addIngredients(ingredients);
     }
 }
