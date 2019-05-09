@@ -12,19 +12,25 @@
 <hr>
 <div class="row">
   <div class="col-sm-12">
-<div class="btn-group">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Manage Recipes
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" (click)="onAddToShoppingList()" style="cursor: pointer">To Shopping List</a>
-    <a style="cursor: pointer;" class="dropdown-item" (click) = "onEditRecipe()">Edit Recipe</a>
-    <a style="cursor: pointer;" class="dropdown-item">Delete Recipe</a>
-  </div>
-</div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h6>Description</h6>
+     {{recipe.description}}
+      </div>
+    </div>
+    <hr>
 <div class="row">
   <div class="col-sm-12">
- {{recipe.description}}
+      <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Manage Recipes
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" (click)="onAddToShoppingList()" style="cursor: pointer">To Shopping List</a>
+            <a style="cursor: pointer;" class="dropdown-item" (click) = "onEditRecipe()">Edit Recipe</a>
+            <a style="cursor: pointer;" class="dropdown-item">Delete Recipe</a>
+          </div>
+        </div>
   </div>
 </div>
 <div class="row">
