@@ -5,9 +5,9 @@
         <div class="col-sm-12">
           <button type="submit" 
           class="btn btn-success"
-          [disabled]="!recipeForm.valid"
+          [disabled]="!recipeForm.valid"          
           >Save</button>
-          <button type="button" class="btn btn-danger">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
         </div>
       </div>
       <hr>
@@ -23,13 +23,17 @@
             <div class="col-sm-12">
                 <div class="form-group">
                   <label for="imagePath">ImageUrl</label>
-                  <img src="" class="img-fluid" style="max-height:300px;">
-                  <input type="text" id="imagePath" class="form-control" formControlName="imagePath">
+                  <input type="text" id="imagePath" class="form-control" formControlName="imagePath"
+                  #imagePath>
                 </div>
               </div>
         </div>
-
-        <div class="row">
+<div class="row">
+  <div class="col-sm-12">
+    <img [src]="imagePath.value" class="img-fluid" style="max-height:300px;">
+  </div>
+</div>
+        <div class="row mt-5">
             <div class="col-sm-12">
                 <div class="form-group">
                   <label for="description">Description</label>
@@ -59,7 +63,7 @@
                     <input type="number" class="form-control"
                     formControlName="amount">
                   </div>
-                  <div class="col-sm-2"><Button class="btn btn-danger" type="button">X</Button></div>
+                  <div class="col-sm-2"><Button class="btn btn-danger" type="button" (click)="OnDeleteIngredient(i)">X</Button></div>
                 </div>
                 <hr>
                 <div class="row">

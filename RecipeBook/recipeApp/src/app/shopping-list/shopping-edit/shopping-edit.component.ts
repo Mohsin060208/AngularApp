@@ -43,7 +43,7 @@ else{
 }
 this.editMode = false;
 this.slForm.reset();
-  }
+}
   onClear(){
     this.slForm.reset();
     this.editMode = false;
