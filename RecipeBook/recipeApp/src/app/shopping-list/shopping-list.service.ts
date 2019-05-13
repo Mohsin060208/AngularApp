@@ -8,7 +8,10 @@ private ingredients : Ingredient[] = [
         new Ingredient("Rice",5),
         new Ingredient("Chicken",2)
       ];
-
+    //   setIngredients(ingredients: Ingredient[]){
+    //       this.ingredients = ingredients;
+    //       this.ingredientsChanged.next(this.ingredients.slice());
+    //   }
       getIngredients(){
           return this.ingredients.slice();
       }
